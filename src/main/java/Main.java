@@ -1,3 +1,4 @@
+import entity.Con;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.*;
 
@@ -13,24 +14,35 @@ public class Main {
 
         try {
             transaction.begin();
-
+             // הדפסה
             Query query = entityManager.createNamedQuery("SELECT");
             List <Con> list = query.getResultList();
-
             for( Con user: list ){
-
                 System.out.println(user.toString());
 
             }
-
-
+            // הכנסת איבר חדש
 //            Con a = new Con();
+//            a.setQwerty("tigabooo");
+//            entityManager.persist(a);
 
+            //update
+            for (Con user:list) {
+                if(user.getQwerty().equals("yhala")){
+                    user.setQwerty("new me");
+                    entityManager.persist(user);
+                }
+            }
+            //הדפסה אחרי שינוי
+            System.out.println("after update");
+            for( Con user: list ){
+                System.out.println(user.toString());
 
-
+            }
             transaction.commit();
+        }
 
-        } finally {
+        finally {
             if (transaction.isActive()) {
                 transaction.rollback();
             }
@@ -40,4 +52,5 @@ public class Main {
 
     }
 
-}
+    }
+
