@@ -7,7 +7,7 @@
 
     <class>entity.Con</class>
     <properties>
-      <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/MyDB"/>
+      <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/postgres"/>
       <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
       <property name="hibernate.connection.username" value="postgres"/>
       <property name="hibernate.connection.password" value="t89123467"/>

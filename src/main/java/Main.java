@@ -49,6 +49,8 @@ public class Main {
             entityManager.close();
             entityManagerFactory.close();
         }
+        System.out.println("ksdnf");
+
     }
 
     }
